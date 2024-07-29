@@ -9,7 +9,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "browserslist": {
     "production": [
