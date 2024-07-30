@@ -7,15 +7,15 @@ const express = require('express');
 const app = express();
 app.use(cors()); // Allow all origins for simplicity
 
-const server = http.createServer(app);
-const io = socketIo(server, {
+ const server = http.createServer(app);
+ const io = socketIo(server, {
   cors: {}
-});
+ });
 
-let teacherSocket = null;  ///eterttret
-const students = {};
+ let teacherSocket = null;  ///eterttret
+ const students = {};
 
-io.on('connection', (socket) => {
+ io.on('connection', (socket) => {
   console.log('New client connected');
 
   socket.on('joinSession', ({ participantId }) => {
@@ -54,6 +54,6 @@ io.on('connection', (socket) => {
       }
     }
   });
-});
+ });
 
-server.listen(4000, () => console.log('Server listening on port 4000'));
+ server.listen(4000, () => console.log('Server listening on port 4000'));
